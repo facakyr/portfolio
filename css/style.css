@@ -195,15 +195,6 @@ h2 {
   right: 0;
   rotate: -3deg;
 }
-.pos-a .ribbon,
-.pos-d .ribbon {
-  --rc: var(--pink);
-}
-.pos-b .ribbon,
-.pos-c .ribbon {
-  --rc: var(--dsage);
-}
-
 .wordmark {
   position: absolute;
   z-index: 0; /* Keeps it in the background layer */
@@ -265,6 +256,7 @@ h2 {
   user-select: none;
   -webkit-user-drag: none;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  will-change: transform;
 }
 .rough-ring {
   position: absolute;
@@ -324,44 +316,6 @@ h2 {
   background: var(--sage);
 }
 
-/* legacy plaque/hint styles */
-.plaque {
-  position: relative;
-  z-index: 5;
-  margin-top: -52px;
-  text-align: center;
-  padding: 16px 30px 14px;
-  background: var(--paper);
-  max-width: min(92vw, 440px);
-}
-.plaque h1 {
-  font: 700 clamp(1.8rem, 3.6vw, 2.6rem)/1 var(--serif);
-  margin: 0;
-}
-.plaque p {
-  margin: 0.4rem 0 0;
-  font-size: 0.98rem;
-  line-height: 1.35;
-}
-.plaque .hand {
-  display: block;
-  margin-top: 4px;
-}
-.hint {
-  font: 0.7rem var(--mono);
-  color: var(--lbrown);
-  margin-top: 10px;
-  text-align: center;
-}
-.hint button {
-  font: inherit;
-  background: none;
-  border: 0;
-  text-decoration: underline;
-  color: inherit;
-  cursor: pointer;
-}
-
 /* ribbons */
 /* Styling for the new image buttons */
 .img-btn {
@@ -389,37 +343,17 @@ h2 {
   pointer-events: none; /* Prevents the browser from trying to drag the image file */
 }
 .rbwrap {
-  filter: drop-shadow(0 0 0 var(--brown)) drop-shadow(1.5px 0 0 var(--brown))
-    drop-shadow(-1.5px 0 0 var(--brown)) drop-shadow(0 1.5px 0 var(--brown))
-    drop-shadow(0 -1.5px 0 var(--brown))
-    drop-shadow(0 6px 5px rgba(114, 81, 63, 0.25));
   transition: transform 0.25s;
+}
+/* the 6-layer brown outline is expensive: desktop only (phones use the lighter .img-btn shadow) */
+@media (min-width: 861px) and (hover: hover) {
+  .rbwrap {
+    filter: drop-shadow(0 0 0 var(--brown)) drop-shadow(1.5px 0 0 var(--brown)) drop-shadow(-1.5px 0 0 var(--brown)) drop-shadow(0 1.5px 0 var(--brown)) drop-shadow(0 -1.5px 0 var(--brown)) drop-shadow(0 6px 5px rgba(114, 81, 63, 0.25));
+  }
 }
 .rbwrap:focus-within {
   transform: rotate(-2.5deg) translateY(-3px);
 }
-.rcol.r .rbwrap:focus-within {
-  transform: rotate(2.5deg) translateY(-3px);
-}
-.ribbon:hover {
-  filter: brightness(1.07);
-}
-.ribbon:active {
-  transform: scale(0.96);
-  filter: brightness(0.9);
-}
-.ribbon:focus-visible {
-  outline: 3px solid var(--brown);
-  outline-offset: -5px;
-}
-.ribbon small {
-  display: block;
-  font: 0.65rem var(--mono);
-  letter-spacing: 0.14em;
-  font-style: normal;
-  opacity: 0.85;
-}
-
 /* scroll-reactive navbar */
 .topbar {
   position: fixed;
@@ -616,6 +550,7 @@ mark {
 }
 .car.live .slide {
   transition: none;
+  will-change: transform;
 }
 .slide {
   position: absolute;
@@ -628,7 +563,6 @@ mark {
   transition:
     transform 0.55s cubic-bezier(0.3, 0.7, 0.2, 1),
     opacity 0.55s;
-  will-change: transform, opacity;
   cursor: pointer;
   padding: 12px 12px 36px;
   background: var(--paper);
@@ -918,11 +852,6 @@ footer {
     rotate: 0deg;
     width: 100%;
     max-width: 210px;
-  }
-  .ribbon {
-    min-width: 0;
-    width: 100%;
-    padding: 12px 24px;
   }
   .about,
   .web {
