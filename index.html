@@ -7,7 +7,8 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <title>Your Name — Sketchbook Portfolio</title>
+    <title>Farsya's — Portfolio</title>
+    <link rel="preload" as="image" href="assets/art/deerd.webp" fetchpriority="high" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -33,22 +34,22 @@
         <nav class="hero-nav" aria-label="Primary">
           <div class="rbwrap pos-a">
             <a href="#about" class="img-btn">
-              <img src="assets/me.webp" alt="About Me" />
+              <img src="assets/me.webp" decoding="async" alt="About Me" />
             </a>
           </div>
           <div class="rbwrap pos-b">
             <a href="#projects" class="img-btn">
-              <img src="assets/it.webp" alt="Technical Projects" />
+              <img src="assets/it.webp" decoding="async" alt="Technical Projects" />
             </a>
           </div>
           <div class="rbwrap pos-c">
             <a href="#works" class="img-btn">
-              <img src="assets/wish.webp" alt="Creative Works" />
+              <img src="assets/wish.webp" decoding="async" alt="Creative Works" />
             </a>
           </div>
           <div class="rbwrap pos-d">
             <a href="#contact" class="img-btn">
-              <img src="assets/hobby.webp" alt="Contact" />
+              <img src="assets/hobby.webp" decoding="async" alt="Contact" />
             </a>
           </div>
         </nav>
@@ -90,7 +91,6 @@
       <div class="wrap about">
         <div class="portrait">
           <img
-            src="assets/foto.jpg"
             id="portrait"
             alt="Portrait of the portfolio owner (replace with your photo)"
           /><span class="orn" style="top: 6%; right: -4%" aria-hidden="true"
@@ -107,20 +107,21 @@
           <h2 id="ab-h">About Me</h2>
           <div class="meta">Farsya Zahra Nafisa</div>
           <p>
-            I'm a <mark>computer engineering</mark> student who likes making
-            things work and making them look lovely. Most days that means
-            circuits and code; the rest is pencils and tablets.
+            I'm a <mark>computer engineering</mark> student focused on
+            hardware and spftware. While engineering is my primary focus,
+            I also do visual design and digital art on the side.
           </p>
           <h3>Engineering</h3>
           <p>
-            Drawn to <mark>embedded systems</mark>, <mark>AI</mark>,
-            <mark>computer vision</mark> and <mark>software development</mark> —
-            anywhere hardware and ideas meet.
+            My technical work centers around <mark>embedded systems</mark>, <mark>control algorithms</mark>,
+            and <mark>software development</mark>. I enjoy building practical, functional
+            systems that bridge the gap between code and physical hardware.
           </p>
           <h3>Creative</h3>
           <p>
-            I make <mark>digital art</mark>, illustration and visual design, i
-            like to make use of my creativity and learn from it
+            My creative work focuses on <mark>UI/UX design</mark>, <mark>brand identity</mark>,
+            and <mark>digital illustration</mark>. It is a great outlet, and it always comes
+            in handy when my tech projects need a clean, user-friendly interface.
           </p>
         </div>
       </div>
@@ -185,7 +186,7 @@
             <div class="bar"><span>me.png</span><span>▫ ✕</span></div>
             <div class="in">
               <img class="avatar" id="avatar" alt="Small illustrated avatar" />
-              <p class="motto">“build things, draw things, repeat.”</p>
+              <p class="motto">“What's Earth without art? Its just Eh ”</p>
             </div>
           </div>
           <div class="win">
@@ -209,12 +210,12 @@
               <h2 id="ct-h" style="font-size: 2rem">Future Aspirations</h2>
               <span class="stamp">UNDER CONSTRUCTION ♡</span>
               <p>
-                I want to build intelligent, embedded systems that feel human —
-                tools where careful engineering and a good eye for design belong
-                together. Next up: deeper work in computer vision, shipping real
-                products, and keeping a sketchbook in my bag.
+                I want to build embedded systems that actually work well in practice,
+                treating the hardware and the interface as one complete package.
+                Next up: deeper work in computer vision, exploring robotics, 
+                and keeping up with digital illustration.
               </p>
-              <p class="hand">where engineering meets illustration ✎</p>
+              <p class="hand">Engineering systems, Illustrating ideas ✎</p>
             </div>
           </div>
           <div class="win tile">
@@ -227,17 +228,17 @@
                   display: inline-block;
                 "
               >
-                Say hi — collaborations, commissions &amp; coffee chats welcome!
+                Say hi — collaborations, commissions &amp; small chats welcome!
               </p>
               <ul class="links" id="links"></ul>
-              <p class="sig" style="margin: 0.6rem 0 0">~ your name ~</p>
+              <p class="sig" style="margin: 0.6rem 0 0">~ Facakyr ~</p>
             </div>
           </div>
         </div>
       </div>
     </section>
     <footer>
-      © <span id="yr"></span> Your Name · hand-coded with pencils &amp; patience
+      © <span id="yr"></span> Facakyr · hardware, software, &amp; digital art 
       · best viewed at any size ✿
     </footer>
 
