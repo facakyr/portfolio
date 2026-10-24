@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <title>Your Name — Sketchbook Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="topbar show" aria-label="Quick links">
+      <a href="#hero">Home</a><a href="#about">About</a
+      ><a href="#projects">Projects</a><a href="#works">Gallery</a
+      ><a href="#contact">Contact</a>
+    </nav>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <filter id="rough">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".03"
+          numOctaves="2"
+          seed="4"
+        />
+        <feDisplacementMap in="SourceGraphic" scale="3.5" />
+      </filter>
+    </svg>
+
+    <header id="hero" aria-label="Introduction">
+      <div class="hero-stage">
+        <nav class="hero-nav" aria-label="Primary">
+          <div class="rbwrap pos-a">
+            <a href="#about" class="img-btn">
+              <img src="assets/me.webp" alt="About Me" />
+            </a>
+          </div>
+          <div class="rbwrap pos-b">
+            <a href="#projects" class="img-btn">
+              <img src="assets/it.webp" alt="Technical Projects" />
+            </a>
+          </div>
+          <div class="rbwrap pos-c">
+            <a href="#works" class="img-btn">
+              <img src="assets/wish.webp" alt="Creative Works" />
+            </a>
+          </div>
+          <div class="rbwrap pos-d">
+            <a href="#contact" class="img-btn">
+              <img src="assets/hobby.webp" alt="Contact" />
+            </a>
+          </div>
+        </nav>
+        <div class="stage">
+          <div class="rough-ring" aria-hidden="true"></div>
+          <span class="orn" style="top: 6%; left: -12%" aria-hidden="true"
+            >✿</span
+          >
+          <span
+            class="orn"
+            style="top: 42%; right: -14%; animation-delay: -2s"
+            aria-hidden="true"
+            >❦</span
+          >
+          <div class="oval">
+            <img id="art" alt="Featured hand-drawn artwork" draggable="false" />
+          </div>
+          <button
+            id="lock"
+            class="lock"
+            type="button"
+            aria-pressed="false"
+            aria-label="Lock artwork"
+            title="Lock artwork"
+          >
+            <!-- Ensure this path is identical to the one in your JS file -->
+            <img
+              src="assets/unlock.webp"
+              alt="unlock"
+              style="width: 22px; pointer-events: none"
+            />
+          </button>
+        </div>
+      </div>
+      <h1 class="wordmark">Welcome</h1>
+    </header>
+
+    <section id="about" aria-labelledby="ab-h">
+      <div class="wrap about">
+        <div class="portrait">
+          <img
+            src="assets/foto.jpg"
+            id="portrait"
+            alt="Portrait of the portfolio owner (replace with your photo)"
+          /><span class="orn" style="top: 6%; right: -4%" aria-hidden="true"
+            >✿</span
+          ><span
+            class="orn"
+            style="bottom: 4%; left: -5%; animation-delay: -3s"
+            aria-hidden="true"
+            >❧</span
+          >
+        </div>
+        <div class="sk">
+          <span class="tag">hello, nice to meet you</span>
+          <h2 id="ab-h">About Me</h2>
+          <div class="meta">Farsya Zahra Nafisa</div>
+          <p>
+            I'm a <mark>computer engineering</mark> student who likes making
+            things work and making them look lovely. Most days that means
+            circuits and code; the rest is pencils and tablets.
+          </p>
+          <h3>Engineering</h3>
+          <p>
+            Drawn to <mark>embedded systems</mark>, <mark>AI</mark>,
+            <mark>computer vision</mark> and <mark>software development</mark> —
+            anywhere hardware and ideas meet.
+          </p>
+          <h3>Creative</h3>
+          <p>
+            I make <mark>digital art</mark>, illustration and visual design, i
+            like to make use of my creativity and learn from it
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="pr-h">
+      <div class="wrap">
+        <div class="meta">file no. 02</div>
+        <h2 id="pr-h">Technical Projects</h2>
+        <div class="divider"><i>✿ ✦ ✿</i></div>
+        <div class="pgrid" id="pgrid"></div>
+      </div>
+    </section>
+
+    <section id="works" aria-labelledby="cw-h">
+      <div class="wrap">
+        <div class="meta">file no. 03</div>
+        <h2 id="cw-h">Creative Works</h2>
+        <div class="divider"><i>❦</i></div>
+        <div
+          class="car"
+          id="car"
+          role="group"
+          aria-roledescription="carousel"
+          aria-label="Artwork gallery"
+          tabindex="0"
+        >
+          <button
+            class="cbtn p"
+            id="prev"
+            type="button"
+            aria-label="Previous artwork"
+          >
+            ←
+          </button>
+          <button
+            class="cbtn n"
+            id="next"
+            type="button"
+            aria-label="Next artwork"
+          >
+            →
+          </button>
+        </div>
+        <div class="cap" aria-live="polite">
+          <h3 id="ct"></h3>
+          <p id="cd"></p>
+        </div>
+      </div>
+    </section>
+    <dialog id="dlg" aria-label="Artwork preview">
+      <img id="dimg" alt="" />
+      <h3 id="dt"></h3>
+      <p id="dd"></p>
+      <button type="button" id="dx">close ✕</button>
+    </dialog>
+
+    <section id="contact" aria-labelledby="ct-h">
+      <div class="wrap web">
+        <aside class="side">
+          <div class="win tile">
+            <div class="bar"><span>me.png</span><span>▫ ✕</span></div>
+            <div class="in">
+              <img class="avatar" id="avatar" alt="Small illustrated avatar" />
+              <p class="motto">“build things, draw things, repeat.”</p>
+            </div>
+          </div>
+          <div class="win">
+            <div class="bar"><span>menu.txt</span></div>
+            <div class="in">
+              <ul class="mini">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#works">Gallery</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <div class="rt">
+          <div class="win">
+            <div class="bar">
+              <span>future_aspirations.txt</span><span>▫ ✕</span>
+            </div>
+            <div class="in">
+              <h2 id="ct-h" style="font-size: 2rem">Future Aspirations</h2>
+              <span class="stamp">UNDER CONSTRUCTION ♡</span>
+              <p>
+                I want to build intelligent, embedded systems that feel human —
+                tools where careful engineering and a good eye for design belong
+                together. Next up: deeper work in computer vision, shipping real
+                products, and keeping a sketchbook in my bag.
+              </p>
+              <p class="hand">where engineering meets illustration ✎</p>
+            </div>
+          </div>
+          <div class="win tile">
+            <div class="bar"><span>contact_me.html</span><span>▫ ✕</span></div>
+            <div class="in">
+              <p
+                style="
+                  background: var(--paper);
+                  padding: 6px 10px;
+                  display: inline-block;
+                "
+              >
+                Say hi — collaborations, commissions &amp; coffee chats welcome!
+              </p>
+              <ul class="links" id="links"></ul>
+              <p class="sig" style="margin: 0.6rem 0 0">~ your name ~</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      © <span id="yr"></span> Your Name · hand-coded with pencils &amp; patience
+      · best viewed at any size ✿
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
