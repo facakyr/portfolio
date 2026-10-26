@@ -64,13 +64,13 @@ const SITE = {
     {
       title: "HMW SAKRAB",
       desc: "Designed and curated the organization’s Instagram feed using Figma",
-      src: "assets/art/sakrab.svg",
+      src: "assets/art/sakrab.jpeg",
       hue: 2,
     },
     {
-      title: "Window Seat",
-      desc: "Interior study with morning light.",
-      src: "assets/art/work-4.svg",
+      title: "Who am I?",
+      desc: "Digitally drawed a semi-realism portrait with reference in MediBang Paint",
+      src: "assets/art/std1.png",
       hue: 3,
     },
     {
@@ -80,9 +80,9 @@ const SITE = {
       hue: 4,
     },
     {
-      title: "Wild Meadow",
-      desc: "Layered florals, mixed media.",
-      src: "assets/art/work-6.svg",
+      title: "Full of Mess",
+      desc: "Illutrated a 2000 art in Microsoft Paint",
+      src: "assets/art/mspaint.png",
       hue: 5,
     },
   ],
